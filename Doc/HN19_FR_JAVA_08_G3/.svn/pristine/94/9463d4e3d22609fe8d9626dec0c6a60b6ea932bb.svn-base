@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.20/sc-2.0.1/datatables.min.css" />
+
+    <style>
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            background-color: #f5f5f5;
+        }
+
+        #side-bar {
+            height: 89vh;
+        }
+
+        .traineeAttribute {
+            background-color: rgb(243, 243, 243);
+        }
+
+        .btn {
+            border: 1px solid black;
+        }
+
+    </style>
+    <title>Trainee Management</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="container-fluid">
+        <div class="row" style="background-color: #205081; vertical-align: baseline;">
+            <div class="col-lg-2 pl-3 my-auto">
+                <a href="#"><img src="../img/fpt-logo 70x53.png" alt="fpt-logo"></a>
+            </div>
+            <div class="col-lg-3 my-auto">
+                <h5 class="my-auto text-white">
+                    FSOFT HR UTILITY
+                </h5>
+            </div>
+            <div class="col-lg-7 my-auto">
+                <p class="float-right my-auto text-white">
+                    Welcome, user
+                </p>
+                <br>
+                <p class="float-right my-auto text-white">
+                    Logout
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Header ends -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- side menu -->
+            <div class="col-lg-2 border-right shadow-sm p-3 mb-5 bg-white rounded" id="side-bar">
+                <h3 class="text-right">
+                    <a href="#">
+                        <span>
+                            << </span>
+                    </a>
+                </h3>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Your role now is</li>
+                    <li class="list-group-item">
+                        <select class="form-control" id="">
+                            <option>FA. Manager</option>
+                            <option>Delivery Manager</option>
+                            <option>Class Admin</option>
+                            <option>FA. Rec</option>
+                            <option>Trainer</option>
+                            <option>System admin</option>
+                        </select>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Class Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Candidate Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Trainer Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Trainee Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            General Setting
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- side menu end -->
+
+            <!-- body -->
+            <div class="col-lg-10">
+                <h3 class="pt-3">Trainee profile</h3>
+                
+                <!-- tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#traineeInformation">Trainee Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#menu1">Training Result</a>
+                    </li>
+                </ul>
+
+                <!-- tab area -->
+                <div id="traineeInformation" class="container-fluid tab-pane active"><br>
+                    <form action="">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td colspan="8" class="text-white" style="background-color:cornflowerblue;">Personal Information</td>
+                            </tr>
+                            <tr>
+                                <td class="traineeAttribute">Empl ID</td>
+                                <td class="traineeValue">00126448</td>
+                                <td class="traineeAttribute">Type</td>
+                                <td class="traineeValue">Trainee</td>
+                                <td class="traineeAttribute">Status</td>
+                                <td class="traineeValue">Waiting for class</td>
+                                <td class="traineeAttribute">Allocation Status</td>
+                                <td class="traineeValue">Not allocated</td>
+                            </tr>
+                            <tr>
+                                <td class="traineeAttribute">Account</td>
+                                <td colspan="3" class="traineeValue">AnhDD3</td>
+
+                                <td class="traineeAttribute">Name</td>
+                                <td colspan="3" class="traineeValue">Đào Đức Anh</td>
+                            </tr>
+                            <tr>
+                                <td class="traineeAttribute">Gender</td>
+                                <td colspan="3" class="traineeValue">Male</td>
+                                <td class="traineeAttribute">DOB</td>
+                                <td colspan="3" class="traineeValue">02/06/1995</td>
+                            </tr>
+                            <tr>
+                                <td class="traineeAttribute">HUST</td>
+                                <td colspan="3" class="traineeValue">ĐTVT</td>
+
+                                <td class="traineeAttribute">Faculty</td>
+                                <td colspan="3" class="traineeValue">0978900009</td>
+                            </tr>
+                            <tr>
+                                <td class="traineeAttribute">Phone</td>
+                                <td colspan="3" class="traineeValue">0978900009</td>
+
+                                <td class="traineeAttribute">Email</td>
+                                <td colspan="3" class="traineeValue">anhdd3@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td class="traineeAttribute">Salary Paid</td>
+                                <td colspan="3" class="traineeValue">Yes</td>
+
+                                <td class="traineeAttribute">TPB Account</td>
+                                <td colspan="3" class="traineeValue">001196003762</td>
+                            </tr>
+                            <tr>
+                                <td class="traineeAttribute">Allowance Group</td>
+                                <td colspan="3" class="traineeValue">Dev-N</td>
+
+                                <td class="traineeAttribute">Commitment</td>
+                                <td colspan="3" class="traineeValue">6 months - 02/07/2018</td>
+                            </tr>
+                            <tr>
+                                <td class="traineeAttribute">History</td>
+                                <td colspan="7" class="traineeValue">17/06/2017 - Created by HangTTT2</td>
+                            </tr>
+                        </table>
+
+                        <!-- Place Modal Here-->
+                    <!-- First modal to view Attendence Status-->
+                    <div id="modalDelete" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                      
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">Confirm Delete</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <h5>Are you sure want to delete ?</h5>
+                            </div>
+                            <div class="modal-footer">
+                                <button  type="button" class="btn btn-danger" > 
+                                    Yes</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                            </div>
+                          </div>
+                      
+                        </div>
+                      </div>
+
+                        <button type="button" class="btn" > 
+                            <i class="fa fa-arrow-circle-up" style="font: size 20px; color: cornflowerblue;"></i>Update Trainee</button>
+                            <button type="button"  class="btn " data-toggle="modal" data-target="#modalDelete"> <i class="fa fa-times" style="color: crimson;"></i> Delete trainee</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fas fa-reply" style="color: crimson;"></i>Close</button>
+                    </form>
+                </div>
+            </div>
+            <!-- body end -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center" style="background-color: #205081;">
+        <span class="text-white">Copyright fresher academy 2018</span>
+    </footer>
+    <!-- Footer ends -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        
+    </script>
+</body>
+
+</html>

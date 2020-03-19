@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.20/sc-2.0.1/datatables.min.css" />
+
+    <style>
+        .footer {
+            /* position: absolute; */
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            background-color: #f5f5f5;
+        }
+
+        #side-bar {
+            height: 89vh;
+        }
+
+        .traineeAttribute,
+        th,
+        .th {
+            background-color: rgb(236, 236, 236);
+        }
+
+        table td {
+            background-color: rgb(250, 250, 250);
+        }
+
+        .tbl-area table {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tbl-area {
+            padding: 0 !important;
+        }
+
+        .tbl-area table input {
+            width: 100%;
+            height: 50px;
+        }
+
+        tbody input {
+            width: 100%;
+            height: 50px;
+        }
+
+        /* select{
+            width: 90px;
+        } */
+        tbody select {
+            width: 100%;
+            height: 50px;
+        }
+
+        .td-input {
+            padding: 0 !important;
+        }
+    </style>
+    <title>Trainee Management</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="container-fluid">
+        <div class="row" style="background-color: #205081; vertical-align: baseline;">
+            <div class="col-lg-2 pl-3 my-auto">
+                <a href="#"><img src="../img/fpt-logo 70x53.png" alt="fpt-logo"></a>
+            </div>
+            <div class="col-lg-3 my-auto">
+                <h5 class="my-auto text-white">
+                    FSOFT HR UTILITY
+                </h5>
+            </div>
+            <div class="col-lg-7 my-auto">
+                <p class="float-right my-auto text-white">
+                    Welcome, user
+                </p>
+                <br>
+                <p class="float-right my-auto text-white">
+                    Logout
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Header ends -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- side menu -->
+            <div class="col-lg-2 border-right shadow-sm p-3 mb-5 bg-white rounded" id="side-bar">
+                <h3 class="text-right">
+                    <a href="#">
+                        <span>
+                        </span>
+                    </a>
+                </h3>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Your role now is</li>
+                    <li class="list-group-item">
+                        <select class="form-control" id="">
+                            <option>FA. Manager</option>
+                            <option>Delivery Manager</option>
+                            <option>Class Admin</option>
+                            <option>FA. Rec</option>
+                            <option>Trainer</option>
+                            <option>System admin</option>
+                        </select>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Class Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Candidate Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Trainer Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Trainee Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            General Setting
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- side menu end -->
+
+            <!-- body -->
+            <div class="col-lg-10">
+                <h3 class="pt-3">Trainee profile</h3>
+
+                <!-- tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#traineeInformation">Trainee Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#trainingResult">Training Result</a>
+                    </li>
+
+                </ul>
+
+                <!-- tab area -->
+                <div id="trainingResult" class="container-fluid tab-pane active"><br>
+                    <!-- Modal -->
+                    <!-- Place Modal Here-->
+                    <!-- First modal to view Attendence Status-->
+                    <div id="modalViewAttendence" class="modal fade" role="dialog">
+                        <div class="modal-dialog modal-lg">
+
+                            <!-- Modal content-->
+                            <div class="modal-content ">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Attendace Status</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="card">
+                                        <div class="card-header" style="background-color:rgb(142, 179, 247);">
+                                            Thg2-20
+                                        </div>
+                                        <div class="card-body">
+                                            <div style="overflow: auto;">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <th>1</th>
+                                                        <th>2</th>
+                                                        <th>5</th>
+                                                        <th>6</th>
+                                                        <th>7</th>
+                                                        <th>8</th>
+                                                        <th>9</th>
+                                                        <th>12</th>
+                                                        <th>13</th>
+                                                        <th>14</th>
+                                                        <th>15</th>
+                                                        <th>16</th>
+                                                        <th>19</th>
+                                                        <th>20</th>
+                                                        <th>21</th>
+                                                        <th>22</th>
+                                                        <th>23</th>
+                                                        <th>26</th>
+                                                        <th>27</th>
+                                                        <th>28</th>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                            <td>P</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <button data-toggle="modal" data-target="#modalUpdateAttendence"
+                                                data-dismiss="modal" type="button" class="btn">
+                                                <i class="fa fa-arrow-circle-up"
+                                                    style="font: size 20px; color: cornflowerblue;"></i>Update</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal"><i
+                                                    class="fas fa-reply" style="color: crimson;"></i>Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Second Modal to Update Attendence Status-->
+                    <div id="modalUpdateAttendence" class="modal fade" role="dialog">
+                        <div class="modal-dialog  modal-lg">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Attendace Status</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="card">
+                                        <div class="card-header" style="background-color:rgb(142, 179, 247);">
+                                            Thg2-20
+                                        </div>
+                                        <div class="card-body">
+                                            <div style="overflow: auto;">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <th>1</th>
+                                                        <th>2</th>
+                                                        <th>5</th>
+                                                        <th>6</th>
+                                                        <th>7</th>
+                                                        <th>8</th>
+                                                        <th>9</th>
+                                                        <th>12</th>
+                                                        <th>13</th>
+                                                        <th>14</th>
+                                                        <th>15</th>
+                                                        <th>16</th>
+                                                        <th>19</th>
+                                                        <th>20</th>
+                                                        <th>21</th>
+                                                        <th>22</th>
+                                                        <th>23</th>
+                                                        <th>26</th>
+                                                        <th>27</th>
+                                                        <th>28</th>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control">
+                                                                    <option>P</option>
+                                                                    <option>A</option>
+                                                                    <option>E</option>
+                                                                    <option>L</option>
+                                                                    <option>An</option>
+                                                                    <option>En</option>
+                                                                    <option>Ln</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <button data-toggle="modal" data-target="#modalUpdateAttendence"
+                                                type="button" class="btn btn-primary">Submit</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal"><i
+                                                    class="fas fa-reply" style="color: crimson;"></i>Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <form action="">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td colspan="9" class="text-black" style="background-color:rgb(139, 176, 243);">
+                                    <a class="btn btn-primary text-decoration-none border" data-toggle="collapse"
+                                        href="#milestoneCollapse" role="button">
+                                        <i class="fas fa-sort-down"></i>
+                                    </a>
+                                    <span class="left-border">Milestone Configuration</span>
+                                </td>
+                            </tr>
+                            <tbody class="collapse show" id="milestoneCollapse">
+                                <tr>
+                                    <td colspan="2" class="th">Total Max Score</td>
+                                    <td>3040</td>
+                                    <td class="th">Total Passing Score</td>
+                                    <td>1824</td>
+                                    <td class="th">Total Weighted Number</td>
+                                    <td>304</td>
+                                    <td class="th">Learning Path</td>
+                                    <td class="td-input">
+                                        <select class="selectClass w-100">
+                                            <option></option>
+                                            <option value="1">1111111111111111</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#"><i class="fas fa-plus-circle"></i></a></td>
+                                    <td colspan="2" class="th">Milestone Name</td>
+                                    <td colspan="2" class="th">Salary Paid</td>
+                                    <td colspan="2" class="th">Start Date</td>
+                                    <td colspan="2" class="th">End Date</td>
+
+                                </tr>
+                                <tr>
+                                    <td><a href="#"><i class="fas fa-trash-alt"></i></a></td>
+                                    <td colspan="2">Thg2-18</td>
+                                    <td colspan="2" class="td-input">
+                                        <select class="selectClass w-100">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </td>
+                                    <td colspan="2" class="td-input">
+                                        <!-- <input class="w-75 datePicker" type="date" name="startDate" id="startDate"> -->
+                                        <input type="date" />
+                                    </td>
+                                    <td colspan="2" class="td-input">
+                                        <!-- <input class="w-75 datePicker" type="date" name="endDate" id="endDate"> -->
+                                        <input type="date" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="#"><i class="fas fa-plus-circle"></i></a></td>
+                                    <td class="th">Topic</td>
+                                    <td colspan="2" class="th">Max Score</td>
+                                    <td colspan="2" class="th">Passing Score</td>
+                                    <td colspan="2" class="th">Weighted Number</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="#"><i class="fas fa-trash-alt"></i></a></td>
+                                    <td class="td-input">
+                                        <select class="selectClass w-100">
+                                            <option value="asql">ASQL</option>
+                                            <option value="bsql">BSQL</option>
+                                        </select>
+                                    </td>
+                                    <td colspan="2" class="td-input">
+                                        <select class="selectClass w-100">
+                                            <option value="10">10</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                    </td>
+                                    <td colspan="2" class="td-input">
+                                        <select class="selectClass w-100">
+                                            <option value="6">6</option>
+                                            <option value="60">60</option>
+                                        </select>
+                                    </td>
+                                    <td colspan="2" class="td-input">
+                                        <select class="selectClass w-100">
+                                            <option value="40">40</option>
+                                            <option value="50">50</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color:rgb(142, 179, 247);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse"
+                                                href="#tbody-attendance-status" role="button">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>Attendace status</span>
+                                </tr>
+                            </thead>
+                            <tbody class="collapse show" id="tbody-attendance-status">
+                                <tr>
+                                    <th></th>
+                                    <th>Absent Times</th>
+                                    <th>Late & Early Leave</th>
+                                    <th>No permisstions Rate</th>
+                                    <th>Disciplinary Point</th>
+                                </tr>
+                                <tr data-toggle="modal" data-target="#modalViewAttendence">
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Final</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>26%</td>
+                                    <td>87%</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <!-- Table Topic mark -->
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color:rgb(142, 179, 247);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#tbody-toppic-mark"
+                                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>Topic Mark</span>
+                                </tr>
+                            </thead>
+                            <tbody class="collapse show" id="tbody-toppic-mark">
+                                <tr>
+                                    <td class="tbl-area">
+                                        <table>
+                                            <tr>
+                                                <td>Thg2-18</td>
+                                                <td>70%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Topic</td>
+                                                <td>Scope</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ASQL</td>
+                                                <td class="td-input">
+                                                    <input type="text" value="6,6" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>BTJB-Test1</td>
+                                                <td class="td-input">
+                                                    <input type="text" value="7,3" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="tbl-area">
+                                        <table>
+                                            <tr>
+                                                <td>Thg2-18</td>
+                                                <td>70%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Topic</td>
+                                                <td>Scope</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ASQL</td>
+                                                <td class="td-input">
+                                                    <input type="text" value="6,6" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>BTJB-Test1</td>
+                                                <td class="td-input">
+                                                    <input type="text" value="7,3" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="tbl-area">
+                                        <table>
+                                            <tr>
+                                                <td>Thg2-18</td>
+                                                <td>70%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Topic</td>
+                                                <td>Scope</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ASQL</td>
+                                                <td class="td-input">
+                                                    <input type="text" value="6,6" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>BTJB-Test1</td>
+                                                <td class="td-input">
+                                                    <input type="text" value="7,3" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        Final
+                                    </td>
+                                    <td>
+                                        66%
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <!-- Table Reward & Penalty -->
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color:rgb(142, 179, 247);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse"
+                                                href="#tbody-reward-penalty" role="button" aria-expanded="false"
+                                                aria-controls="collapseExample">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>Reward & Penalty</span>
+                                </tr>
+                            </thead>
+                            <tbody class="collapse show" id="tbody-reward-penalty">
+                                <tr>
+                                    <th>
+                                        <a>
+                                            <i class="fas fa-plus-circle"></i>
+                                        </a>
+                                    </th>
+                                    <th>Milestone</th>
+                                    <th>Date</th>
+                                    <th>Bonus Point</th>
+                                    <th>Penalty Point</th>
+                                    <th>Reason</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a>
+                                            <i class="far fa-trash-alt"></i>
+                                        </a>
+                                    </td>
+                                    <td class="td-input">
+                                        <select>
+                                            <option>Thg2-18</option>
+                                        </select>
+                                    </td>
+                                    <td class="td-input">
+                                        <input type="date" />
+                                    </td>
+                                    <td class="td-input">
+                                        <input type="number" />
+                                    </td>
+                                    <td class="td-input">
+                                        <input type="number" />
+                                    </td>
+                                    <td class="td-input">
+                                        <select>
+                                            <option>Lớp trưởng</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <!-- Table GPA -->
+                        <table class="table table-bordered" id="gpa">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color: rgb(149, 188, 242);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#tbody-gpa"
+                                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>GPA</span>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-gpa" class="collapse show">
+                                <tr>
+                                    <th></th>
+                                    <th>Academic Mark</th>
+                                    <th>Disciplinary</th>
+                                    <th>Bonus</th>
+                                    <th>Penalty</th>
+                                    <th>GPA</th>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>70%</td>
+                                    <td>60%</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+                                    <td>67%</td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg3-18</td>
+                                    <td>61%</td>
+                                    <td>100%</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+                                    <td>73%</td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg4-18</td>
+                                    <td>70%</td>
+                                    <td>100%</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+                                    <td>74%</td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Final</td>
+                                    <td>66%</td>
+                                    <td>100%</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+                                    <td>76,3%</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                        <!-- Table Commitment-->
+                        <table class="table table-bordered" id="gpa">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color: rgb(149, 188, 242);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#tbody-commit"
+                                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>Commitment</span>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-commit" class="collapse show">
+                                <tr>
+                                    <th>Committed Value</th>
+                                    <th>Commited Working Duration</th>
+                                    <th>Commited Working Start Date</th>
+                                    <th>Commited Working End Date</th>
+                                    <th>Remarks</th>
+                                </tr>
+                                <tr>
+
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                    <td class="td-input">
+                                        <input type="text" value="" />
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <!-- Table Allowance -->
+                        <table class="table table-bordered" id="allowance">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color: rgb(149, 188, 242);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#tbody-allowance"
+                                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>Allowance</span>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-allowance" class="collapse show">
+                                <tr>
+                                    <th></th>
+                                    <th>GPA</th>
+                                    <th>Level</th>
+                                    <th>Salary Paid</th>
+                                    <th>Standard Allowance</th>
+                                    <th>Remarks</th>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                    <td class="td-input">
+                                        <input type="text" value="" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                    <td class="td-input">
+                                        <input type="text" value="" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                    <td class="td-input">
+                                        <input type="text" value="" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="th" colspan="4">Total</td>
+                                    <td colspan="2">8.000.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Table Allocation -->
+                        <table class="table table-bordered" id="allocation">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color: rgb(149, 188, 242);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#tbody-allocation"
+                                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>Allocation</span>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-allocation" class="collapse show">
+                                <tr>
+                                    <th>Allocated FSU</th>
+                                    <th>Salary</th>
+                                    <th>Start Date</th>
+                                    <th>Allowcation Status</th>
+                                    <th>Remarks</th>
+                                </tr>
+                                <tr>
+                                    <td class="td-input">
+                                        <input type="text" value="" />
+                                    </td>
+                                    <td class="td-input">
+                                        <input type="text" value="" />
+                                    </td>
+                                    <td class="td-input">
+                                        <input type="date" value="" />
+                                    </td>
+                                    <td class="td-input">
+                                        <select id="sel1">
+                                            <option>NotAllocated</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </td>
+                                    <td class="td-input">
+                                        <input type="text" value="" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="button" id="btn-submit" class="btn btn-primary" data-toggle="modal"
+                            data-target="#rejectClass">Submit</button>&nbsp;
+
+                        <button class="btn btn-outline-dark">
+                            <i class="fas fa-reply" style="color: crimson;"></i>
+                            Close
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- body end -->
+
+            <!-- Modal confirm submit -->
+            <div class="modal fade" id="rejectClass" tabindex="-1" role="dialog" aria-labelledby="rejectClass1"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="rejectClass1">Confirm</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="recipient-name" class="col-form-label">
+                                <h5><i class="fas fa-info-circle" style="color: green;"></i> Are you sure to submit?</h5>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#rejectClassReason">OK</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal confirm submit -->
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center" style="background-color: #205081;">
+        <span class="text-white">Copyright fresher academy 2020</span>
+    </footer>
+    <!-- Footer ends -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../js/training-result.js"></script>
+</body>
+
+</html>

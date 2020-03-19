@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.20/sc-2.0.1/datatables.min.css" />
+
+    <style>
+        .footer {
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            background-color: #f5f5f5;
+        }
+
+        #side-bar {
+            height: 89vh;
+        }
+
+        .traineeAttribute,th,.th {
+            background-color: rgb(204, 204, 204);
+
+        }
+        tbody td{
+            background-color: rgb(221, 221, 221);
+        }
+        .btn {
+            border: 1px solid black;
+        }
+    </style>
+    <title>Trainee Management</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="container-fluid">
+        <div class="row" style="background-color: #205081; vertical-align: baseline;">
+            <div class="col-lg-2 pl-3 my-auto">
+                <a href="#"><img src="../img/fpt-logo 70x53.png" alt="fpt-logo"></a>
+            </div>
+            <div class="col-lg-3 my-auto">
+                <h5 class="my-auto text-white">
+                    FSOFT HR UTILITY
+                </h5>
+            </div>
+            <div class="col-lg-7 my-auto">
+                <p class="float-right my-auto text-white">
+                    Welcome, user
+                </p>
+                <br>
+                <p class="float-right my-auto text-white">
+                    Logout
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Header ends -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- side menu -->
+            <div class="col-lg-2 border-right shadow-sm p-3 mb-5 bg-white rounded" id="side-bar">
+                <h3 class="text-right">
+                    <a href="#">
+                        <span>
+                            </span>
+                    </a>
+                </h3>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Your role now is</li>
+                    <li class="list-group-item">
+                        <select class="form-control" id="">
+                            <option>FA. Manager</option>
+                            <option>Delivery Manager</option>
+                            <option>Class Admin</option>
+                            <option>FA. Rec</option>
+                            <option>Trainer</option>
+                            <option>System admin</option>
+                        </select>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Class Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Candidate Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Trainer Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            Trainee Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="">
+                            General Setting
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- side menu end -->
+
+            <!-- body -->
+            <div class="col-lg-10">
+                <h3 class="pt-3">Trainee profile</h3>
+                
+                <!-- tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#traineeInformation">Trainee Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#trainingResult">Training Result</a>
+                    </li>
+                </ul>
+
+                <!-- tab area -->
+                <div id="trainingResult" class="container-fluid tab-pane active"><br>
+                    <form action="">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td colspan="9" class="text-black" style="background-color:rgb(139, 176, 243);">
+                                    <a class="btn btn-primary text-decoration-none border" data-toggle="collapse" href="#milestoneCollapse" role="button">
+                                        <i class="fas fa-sort-down"></i>
+                                    </a>
+                                        <span class="left-border">Milestone Configuration</span>
+                                </td>
+                            </tr>
+                            <tbody class="collapse show" id="milestoneCollapse">
+                                <tr>
+                                    <td colspan="2" class="th">Total Max Score</td>
+                                    <td>3040</td>
+                                    <td class="th">Total Passing Score</td>
+                                    <td>1824</td>
+                                    <td class="th">Total Weighted Number</td>
+                                    <td>304</td>
+                                    <td class="th">Learning Path</td>
+                                    <td>
+                
+                                    </td>
+                                </tr>
+                                <tr>
+                                   
+                                    <td colspan="2" class="th">Milestone Name</td>
+                                    <td colspan="2" class="th">Salary Paid</td>
+                                    <td colspan="2" class="th">Start Date</td>
+                                    <td colspan="2" class="th">End Date</td>
+    
+                                </tr>
+                                <tr>
+                                   
+                                    <td colspan="2">Thg2-18</td>
+                                    <td colspan="2">
+                                      Yes
+                                    </td>
+                                    <td colspan="2">
+                                        12/12/2020
+                                    </td>
+                                    <td colspan="2">
+                                        12/12/2020
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    
+                                    <td class="th" >Topic</td>
+                                    <td colspan="2" class="th">Max Score</td>
+                                    <td colspan="2" class="th">Passing Score</td>
+                                    <td colspan="2" class="th">Weighted Number</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    
+                                    <td>ASQL</td>
+                                    <td colspan="2">10</td>
+                                    <td colspan="2">6</td>
+                                    <td colspan="2">40</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color:rgb(142, 179, 247);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse"
+                                                href="#tbody-attendance-status" role="button">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>Attendace status</span>
+                                </tr>
+                            </thead>
+                            <tbody class="collapse show" id="tbody-attendance-status">
+                                <tr>
+                                    <th></th>
+                                    <th>Absent Times</th>
+                                    <th>Late & Early Leave</th>
+                                    <th>No permisstions Rate</th>
+                                    <th>Disciplinary Point</th>
+                                </tr>
+
+
+
+                                <tr data-toggle="modal" data-target="#modalViewAttendence">
+                                    <td class="th" >Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                </tr>
+
+                             
+
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Final</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>26%</td>
+                                    <td>87%</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <!-- Table Topic mark -->
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color:rgb(142, 179, 247);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#tbody-toppic-mark"
+                                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>Topic Mark</span>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody class="collapse show" id="tbody-toppic-mark">
+                                <tr>
+                                    <td class="tbl-area">
+                                        <table>
+                                            <tr>
+                                                <td>Thg2-18</td>
+                                                <td>70%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Topic</td>
+                                                <td>Scope</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ASQL</td>
+                                                <td class="">
+                                                    7,3
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>BTJB-Test1</td>
+                                                <td class="">
+                                                    7,3
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="tbl-area">
+                                        <table>
+                                            <tr>
+                                                <td>Thg2-18</td>
+                                                <td>70%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Topic</td>
+                                                <td>Scope</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ASQL</td>
+                                                <td class="">
+                                                    7,3
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>BTJB-Test1</td>
+                                                <td class="">
+                                                    7,3
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="tbl-area">
+                                        <table>
+                                            <tr>
+                                                <td>Thg2-18</td>
+                                                <td>70%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Topic</td>
+                                                <td>Scope</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ASQL</td>
+                                                <td class="">
+                                                    7,3
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>BTJB-Test1</td>
+                                                <td class="">
+                                                    7,3
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        Final
+                                    </td>
+                                    <td>
+                                        66%
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <!-- Table Reward & Penalty -->
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color:rgb(142, 179, 247);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse"
+                                                href="#tbody-reward-penalty" role="button" aria-expanded="false"
+                                                aria-controls="collapseExample">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>Reward & Penalty</span>
+                                </tr>
+                            </thead>
+                            <tbody class="collapse show" id="tbody-reward-penalty">
+                                <tr>
+                                    
+                                    <th>Milestone</th>
+                                    <th>Date</th>
+                                    <th>Bonus Point</th>
+                                    <th>Penalty Point</th>
+                                    <th>Reason</th>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>
+                                        Thg2-18
+                                    </td>
+                                    <td class="">
+                                        7,3
+                                    </td>
+                                    <td class="">
+                                        7,3
+                                    </td>
+                                    <td class="">
+                                        7,3
+                                    </td>
+                                    <td>
+                                        Lớp trưởng
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                        <!-- Table GPA -->
+                        <table class="table table-bordered" id="gpa">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color: rgb(149, 188, 242);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#tbody-gpa" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>Attendace status</span>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-gpa">
+                                <tr>
+                                    <th></th>
+                                    <th>Absent Times</th>
+                                    <th>Late & Early Leave</th>
+                                    <th>No permisstions Rate</th>
+                                    <th>Disciplinary Point</th>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Final</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>26%</td>
+                                    <td>87%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <!-- Table Commitment-->
+                        <table class="table table-bordered" id="gpa">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color: rgb(149, 188, 242);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#tbody-commit" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>Commitment</span>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-commit">
+                                <tr>
+                                   
+                                    <th>Committed Value</th>
+                                    <th>Commited Working Duration</th>
+                                    <th>Commited Working Start Date</th>
+                                    <th>Commited Working End Date</th>
+                                    <th>Remarks</th>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                    <td class="">
+                                        7,3
+                                    </td>
+                                </tr>
+    
+                            </tbody>
+                        </table>
+
+                        <!-- Table Allowance -->
+                        <table class="table table-bordered" id="allowance">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color: rgb(149, 188, 242);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#tbody-allowance" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>Attendace status</span>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-allowance">
+                                <tr>
+                                    <th></th>
+                                    <th>GPA</th>
+                                    <th>Level</th>
+                                    <th>Salary Paid</th>
+                                    <th>Standard Allowance</th>
+                                    <th>Remarks</th>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                    <td class="">
+                                        7,3
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                    <td class="">
+                                        7,3
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="th">Thg2-18</td>
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>78%</td>
+                                    <td>60%</td>
+                                    <td class="">
+                                        7,3
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="th" colspan="4">Total</td>
+                                    <td colspan="2">8.000.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Table Allocation -->
+                        <table class="table table-bordered" id="allocation">
+                            <thead>
+                                <tr>
+                                    <td colspan="8" class="text-black" style="background-color: rgb(149, 188, 242);">
+                                        <span>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#tbody-allocation" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <i class="fas fa-sort-down"></i>
+                                            </a>
+                                        </span>
+                                        <span>Allocation</span>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-allocation">
+                                <tr>
+                                    <th>Allocated FSU</th>
+                                    <th>Salary</th>
+                                    <th>Start Date</th>
+                                    <th>Allowcation Status</th>
+                                    <th>Remarks</th>
+                                </tr>
+                                <tr>
+                                    <td class="">
+                                        7,3
+                                    </td>
+                                    <td class="">
+                                        7,3
+                                    </td>
+                                    <td class="">
+                                        7,3
+                                    </td>
+                                    <td class="">
+                                        7,3
+                                    </td>
+                                    <td class="">
+                                        7,3
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <button type="button" class="btn" > 
+                            <i class="fa fa-arrow-circle-up" style="font: size 20px; color: cornflowerblue;"></i>Update Trainee</button>
+                            <button  class="btn "> <i class="fa fa-times" style="color: crimson;"></i> Delete trainee</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fas fa-reply" style="color: crimson;"></i>Close</button>
+                    </form>
+                </div>
+               
+            </div>
+            <!-- body end -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center" style="background-color: #205081;">
+        <span class="text-white">Copyright fresher academy 2018</span>
+    </footer>
+    <!-- Footer ends -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        
+    </script>
+</body>
+
+</html>
