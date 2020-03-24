@@ -483,7 +483,7 @@
         </table>
         <!-- update trainee -->
         <a href="#">
-            <button type="button" class="button btn">
+            <button type="button" id="btn-update-trainee" class="button btn">
                 <i class="fa fa-arrow-circle-up mr-1" style="font: size 20px; color: cornflowerblue;"></i>Update Trainee
 
             </button>

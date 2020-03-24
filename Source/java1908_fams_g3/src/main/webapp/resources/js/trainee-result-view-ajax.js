@@ -14,6 +14,21 @@ $(document).ready(function(){
         });
     });
 
+    
+    $("#btn-update-trainee").click(function(e){
+        e.preventDefault();
+        $("#ajax-area").html("Loading...");
+        $.get({
+//            url: "trainee-profile-view-ajax.html",
+        	url: "/trainee-management/trainee-profile-update-ajax",
+            success: function(data) {
+                setTimeout(() => {
+                    $("#ajax-area").html(data);
+                }, 500);
+            }
+        });
+    });
+    
     // $("#training-result").click(function(e){
     //     e.preventDefault();
     //     $("#ajax-area").html("Loading...");

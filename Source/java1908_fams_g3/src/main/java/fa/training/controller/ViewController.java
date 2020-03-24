@@ -33,6 +33,8 @@ public class ViewController {
 	public String ladingPageContentTable() {
 		return "dashboard-content-table";
 	}
+	
+	
 
 	@RequestMapping("/landing-page/content-chart")
 	public String ladingPageContentChart() {
@@ -57,7 +59,7 @@ public class ViewController {
 
 	@RequestMapping("/trainee-management/trainee-profile-update-ajax")
 	public String getTraineeProfileUpdate() {
-		return "trainee-profile-update-ajax";
+		return "trainee-result-update-ajax";
 	}
 
 	@RequestMapping("/trainee-management/trainee-profile-view-ajax")
@@ -68,6 +70,11 @@ public class ViewController {
 	@RequestMapping("/trainee-management/trainee-result-view-ajax")
 	public String getTraineeResultView() {
 		return "trainee-result-view-ajax";
+	}
+
+	@RequestMapping("/trainee-management/modal-attendace-status")
+	public String getModalAttendaceStatus() {
+		return "modal-attendace-status";
 	}
 
 
