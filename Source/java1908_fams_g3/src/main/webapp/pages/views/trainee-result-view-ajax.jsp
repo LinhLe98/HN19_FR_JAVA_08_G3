@@ -482,8 +482,8 @@
             </tbody>
         </table>
         <!-- update trainee -->
-        <a href="#">
-            <button type="button" class="button btn">
+        <a href="#" id="update-result">
+            <button type="button" class="button btn" >
                 <i class="fa fa-arrow-circle-up mr-1" style="font: size 20px; color: cornflowerblue;"></i>Update Trainee
 
             </button>

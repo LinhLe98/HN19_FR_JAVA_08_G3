@@ -16,7 +16,7 @@ import javax.persistence.OneToOne;
 public class Trainee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int id; 
 
 	@OneToMany(mappedBy = "trainee")
 	private List<LearningPath> learningPaths;
@@ -58,7 +58,8 @@ public class Trainee {
 	private String history;
 	private String skill;
 	private String allowanceGroup; // co the dung entity
-
+	private int active;
+	private boolean salaryPaid;
 	public Trainee() {
 		super();
 	}

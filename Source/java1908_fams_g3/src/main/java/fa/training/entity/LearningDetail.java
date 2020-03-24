@@ -11,7 +11,18 @@ public class LearningDetail {
 	private int id;
 	private String topic;
 
-	@ManyToOne
+//	@Id
+//	@Column(name="learncode")
+//	private String learnCode;
+//	
+//	@Id
+//	@Column(name="topic")
+//	private String topic;
+//	public LearningDetail() {
+//		super();
+//	}
+	
+	@ManyToOne  // wrong
 	@JoinColumn(referencedColumnName = "learningCode")
 	LearningPath learningPath;
 

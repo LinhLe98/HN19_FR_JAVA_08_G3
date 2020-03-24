@@ -24,54 +24,54 @@
             </tr>
             <tr>
                 <td class="traineeAttribute">Empl ID</td>
-                <td class="traineeValue">00126448</td>
+                <td class="traineeValue">${trainee.id}</td>
                 <td class="traineeAttribute">Type</td>
-                <td class="traineeValue">Trainee</td>
+                <td class="traineeValue">${trainee.type}</td>
                 <td class="traineeAttribute">Status</td>
-                <td class="traineeValue">Waiting for class</td>
+                <td class="traineeValue">${trainee.status}</td>
                 <td class="traineeAttribute">Allocation Status</td>
-                <td class="traineeValue">Not allocated</td>
+                <td class="traineeValue">${trainee.allocation.allocationStatus}</td>
             </tr>
             <tr>
                 <td class="traineeAttribute">Account</td>
-                <td colspan="3" class="traineeValue">AnhDD3</td>
+                <td colspan="3" class="traineeValue">${trainee.account}</td>
 
                 <td class="traineeAttribute">Name</td>
-                <td colspan="3" class="traineeValue">Đào Đức Anh</td>
+                <td colspan="3" class="traineeValue">${trainee.name}</td>
             </tr>
             <tr>
                 <td class="traineeAttribute">Gender</td>
-                <td colspan="3" class="traineeValue">Male</td>
+                <c:if test="${trainee.gender ==true }"><td colspan="3" class="traineeValue">Male</td></c:if>
+                <c:if test="${trainee.gender ==false}"><td colspan="3" class="traineeValue">Female</td></c:if>
                 <td class="traineeAttribute">DOB</td>
-                <td colspan="3" class="traineeValue">02/06/1995</td>
+                <td colspan="3" class="traineeValue">${trainee.dateOfBirth}</td>
             </tr>
             <tr>
-                <td class="traineeAttribute">HUST</td>
-                <td colspan="3" class="traineeValue">ĐTVT</td>
+                <td class="traineeAttribute">University</td>
+                <td colspan="3" class="traineeValue">${trainee.university.universityName}</td>
 
                 <td class="traineeAttribute">Faculty</td>
-                <td colspan="3" class="traineeValue">0978900009</td>
+                <td colspan="3" class="traineeValue">${trainee.faculty.facultyName}</td>
             </tr>
             <tr>
                 <td class="traineeAttribute">Phone</td>
-                <td colspan="3" class="traineeValue">0978900009</td>
+                <td colspan="3" class="traineeValue">${trainee.phone}</td>
 
                 <td class="traineeAttribute">Email</td>
-                <td colspan="3" class="traineeValue">anhdd3@gmail.com</td>
+                <td colspan="3" class="traineeValue">${trainee.email}</td>
             </tr>
             <tr>
                 <td class="traineeAttribute">Salary Paid</td>
                 <td colspan="3" class="traineeValue">Yes</td>
-
                 <td class="traineeAttribute">TPB Account</td>
-                <td colspan="3" class="traineeValue">001196003762</td>
+                <td colspan="3" class="traineeValue">${trainee.tPBAccount}</td>
             </tr>
             <tr>
                 <td class="traineeAttribute">Allowance Group</td>
-                <td colspan="3" class="traineeValue">Dev-N</td>
+                <td colspan="3" class="traineeValue">${trainee.allowanceGroup}</td>
 
                 <td class="traineeAttribute">Commitment</td>
-                <td colspan="3" class="traineeValue">6 months - 02/07/2018</td>
+                <td colspan="3" class="traineeValue">${trainee.commitment.workingDuration} months - ${trainee.commitment.startDate}</td>
             </tr>
             <tr>
                 <td class="traineeAttribute">History</td>

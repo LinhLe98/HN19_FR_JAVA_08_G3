@@ -1,5 +1,7 @@
 package fa.training.service;
 
-public interface TraineeProfileService {
+import fa.training.entity.Trainee;
 
+public interface TraineeProfileService {
+	public Trainee getTrainee(int id);
 }

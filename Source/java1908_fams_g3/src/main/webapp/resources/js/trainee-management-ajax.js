@@ -88,12 +88,17 @@ $(document).ready(function () {
 
     //ajax to view page if click in TraineeID
     $(".ajax-class").click(function(e){
+    	var empID = $(this).text();
         e.preventDefault();
         $("#ajax-area").html("Loading...");
+        
         $.ajax({
             type: "GET",
+            data: {
+            	empID: empID
+            },
 //            url: "trainee-profile-view-ajax.html",
-            url: "/trainee-management/trainee-profile-view-ajax",
+            url: "/trainee-profile/view",
             success: function(data) {
                 setTimeout(() => {
                     $("#ajax-area").html(data);

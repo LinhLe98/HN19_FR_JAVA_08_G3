@@ -31,6 +31,10 @@ public class LearningPath {
 
 	private String learningCode;
 
+//	@ManyToOne
+//	@JoinColumn(referencedColumnName="learncode", name="path")
+//	@JoinColumn(referencedColumnName="topic", name="topic")
+//	private LearningDetail learningCode;
 	public LearningPath() {
 		super();
 	}

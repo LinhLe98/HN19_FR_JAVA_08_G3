@@ -13,6 +13,19 @@ $(document).ready(function(){
             }
         });
     });
+    $("#update-result").click(function(e) {
+    	e.preventDefault();
+        $("#ajax-area").html("Loading...");
+        $.get({
+//            url: "trainee-profile-view-ajax.html",
+        	url: "/trainee-management/trainee-result-update",
+            success: function(data) {
+                setTimeout(() => {
+                    $("#ajax-area").html(data);
+                }, 500);
+            }
+        });
+    });
 
     // $("#training-result").click(function(e){
     //     e.preventDefault();

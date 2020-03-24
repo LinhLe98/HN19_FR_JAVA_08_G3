@@ -14,7 +14,7 @@ public class Commitment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private int commitmentValue;
+	private int commitmentValue; //double
 	private int workingDuration;
 	private LocalDate startDate;
 	private LocalDate endDate;

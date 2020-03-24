@@ -24,9 +24,7 @@
             height: 100%;
         }
 
-        .tbl-area {
-            padding: 0 !important;
-        }
+     
        
       
         .button {
@@ -34,7 +32,48 @@
             margin: 3% 0%;
         }
 
-      
+        table td {
+            background-color: rgb(250, 250, 250);
+            /* background-color: rgb(204, 42, 42); */
+        }
+
+
+        .tbl-area {
+            padding: 0 !important;
+        }
+
+        
+        input {
+            width: 100%;
+            height: 50px !important;
+        }
+
+        tbody select {
+            width: 100%;
+            height: 50px;
+        }
+
+        .td-input {
+            padding: 0 !important;
+        }
+
+        .modal-body td {
+            padding: 0em;
+            text-align: center;
+            width: 5%;
+        }
+        .modal-body td select{
+            width: 100%;
+            text-align: center;
+        }
+        
+        .form-control {
+            padding: 0em;
+        }
+
+        .error-border{
+            border-color: red;
+        }
 
       
 

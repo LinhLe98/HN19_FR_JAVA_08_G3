@@ -29,7 +29,7 @@
             <td>1</td>
             <td>
                 <a href="#" class="ajax-class">
-                    0012679
+                    2
                 </a>
             </td>
             <td>AnhDD3</td>

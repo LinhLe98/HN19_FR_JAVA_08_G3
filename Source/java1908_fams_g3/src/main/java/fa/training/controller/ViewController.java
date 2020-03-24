@@ -70,5 +70,8 @@ public class ViewController {
 		return "trainee-result-view-ajax";
 	}
 
-
+	@RequestMapping("/trainee-management/trainee-result-update")
+	public String getTraineeResultUpdate() {
+		return "trainee-result-update";
+	}
 }
