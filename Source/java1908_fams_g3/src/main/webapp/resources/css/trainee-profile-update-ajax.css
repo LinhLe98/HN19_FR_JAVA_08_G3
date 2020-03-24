@@ -1,0 +1,28 @@
+.error {
+    color: red;
+}
+
+#side-bar {
+    height: 89vh;
+}
+
+.traineeAttribute {
+    background-color: rgb(243, 243, 243);
+}
+
+.traineeValue {
+    background-color: rgb(250, 250, 250);
+    ;
+}
+
+.traineePadding {
+    padding: 0 !important;
+}
+
+.td-input {
+    height: 50px;
+}
+
+.btn-customized {
+    border: 1px solid black;
+}
