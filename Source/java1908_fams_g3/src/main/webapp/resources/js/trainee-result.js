@@ -7,6 +7,20 @@ $(document).ready(function () {
     // $('.datepicker-endDate-milestone').datepicker({
     //     uiLibrary: 'bootstrap4'
     // });
+    
+//    $("#return-view").click(function(e){
+//        e.preventDefault();
+//        $("#ajax-area").html("Loading...");
+//        $.get({
+////            url: "trainee-profile-view-ajax.html",
+//        	url: "/trainee-management/trainee-result-view-ajax",
+//            success: function(data) {
+//                setTimeout(() => {
+//                    $("#ajax-area").html(data);
+//                }, 500);
+//            }
+//        });
+//    });
 
     //get modal attendace status
     $.get({
@@ -17,7 +31,16 @@ $(document).ready(function () {
     });
     var listMinestone = [];
     var listTopic = [];
-
+    
+    $.get({
+        url: "/trainee-resul/getAllTopic",
+        success: function (data) {
+        	listTopic = data;
+        }
+    });
+    
+   
+    
     $('.datepicker-startDate-allocation').datepicker({
         uiLibrary: 'bootstrap4'
     });
@@ -86,20 +109,7 @@ $(document).ready(function () {
             }
         });
 
-        // var topic = $(".topic-milestone:last").val();
-        // var count = 0;
-        // $(".topic-milestone").each(function () {
-        //     if ($(this).val() == topic) {
-        //         count = count + 1;
-        //     }
-        // });
-        // if (count > 1) {
-        //     $("#message").append('“Topic” must be unique.<br />');
-        //     $(".topic-milestone:last").addClass("error-border");
-        //     check = false;
-        // } else {
-        //     $(".topic-milestone:last").removeClass("error-border");
-        // }
+       
 
         // validata score
         $(".score").each(function () {
@@ -310,16 +320,24 @@ $(document).ready(function () {
 
     //click to add more topic icon
     $(document).on('click', ".icon-add-more-topic", function (e) {
+    		//get list topic from database
+    		var n = listTopic.length;
+    	    var selectListTopic = document.createElement('select');
+
+    	    for (var i = 0; i < n; i++) {
+    	        var option = document.createElement('option');
+    	        option.value = listTopic[i].id;
+    	        option.text = listTopic[i].topicName;
+    	        selectListTopic.appendChild(option);
+    	    }
+    	    //
         $(this).closest(".list-topic").nextUntil('.milestones').addBack().last().after(`
             <tr class="topics">
                 <td></td>
                 <td><a href="#"><i class="fas fa-trash-alt icon-delete-topic"></i></a>
                 </td>
-                <td class="td-input">
-                    <select class="selectClass w-100 topic-milestone">
-                        <option value="asql">ASQL</option>
-                        <option value="bsql">BSQL</option>
-                    </select>
+                <td class="td-input listTopicName">
+                    
                 </td>
                 <td colspan="2" class="td-input">
                     <select class="selectClass w-100 score max-score">
@@ -344,6 +362,8 @@ $(document).ready(function () {
                 </td>
             </tr>
         `);
+        
+        $(".listTopicName:last").append(selectListTopic);
 
         // var newTopic = $(".topics:last td");
         var milestoneParentOfTopic = $(this).closest('tr').prev();
@@ -360,7 +380,7 @@ $(document).ready(function () {
 
         var nameMilestone = $(this).closest('tr').prevAll('.milestones').first().find(".milestoneName").text();
 
-        var nameTopic = $(this).closest('tr').nextUntil('.milestones').last().find('.topic-milestone option:selected').text();
+        var nameTopic = $(this).closest('tr').nextUntil('.milestones').last().find('.listTopicName option:selected').text();
 
         $(`#tbody-toppic-mark #content .topicMarks:nth-child(${index + 1}) table`)
             .append(`
@@ -374,11 +394,11 @@ $(document).ready(function () {
     });
 
     //event onchange name of topic
-    $(document).on('change', '.topic-milestone', function () {
+    $(document).on('change', '.listTopicName', function () {
         var milestoneParentOfTopic = $(this).closest('.topics').prevAll('.milestones').first();
         var index = $(".milestones").index(milestoneParentOfTopic);
         // alert("index: "+index);
-        var topicName = $(this).children("option:selected").text();
+        var topicName = $(this).find("option:selected").text();
         listMinestone[index].listOfTopic.name = topicName;
         var indexOfTopic = $(this).closest('tr').prevUntil(".milestones").length;
         // alert("index of topic: "+indexOfTopic);

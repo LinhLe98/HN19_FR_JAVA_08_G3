@@ -57,10 +57,10 @@ public class ViewController {
 		return "trainee-management-ajax";
 	}
 
-	@RequestMapping("/trainee-management/trainee-profile-update-ajax")
-	public String getTraineeProfileUpdate() {
-		return "trainee-result-update-ajax";
-	}
+//	@RequestMapping("/trainee-management/trainee-profile-update-ajax")
+//	public String getTraineeProfileUpdate() {
+//		return "trainee-result-update-ajax";
+//	}
 
 	@RequestMapping("/trainee-management/trainee-profile-view-ajax")
 	public String getTraineeProfileView() {

@@ -49,10 +49,9 @@
                                     <td class="th">Learning Path</td>
                                     <td class="td-input">
                                         <select class="selectClass w-100">
-                                            <option value="0"></option>
-                                            <option value="1">1111111111111111</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
+                                        <c:forEach items="${listLearingPathDetail}" var="lp">
+                                         <option value="${lp.id}">${lp.learningPath.learningCode}</option>
+                                        </c:forEach>
                                         </select>
                                     </td>
                                 </tr>
@@ -372,9 +371,9 @@
             
                         <div class="modal-footer">
             
-                            <button type="button" id="btn-modal-submit" class="btn btn-primary">OK</button>
+                            <button type="button" id="btn-modal-submit" class="btn btn-primary return-view">OK</button>
             
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" id="return-view" class="btn btn-secondary return-view" data-dismiss="modal">Cancel</button>
             
                         </div>
             
