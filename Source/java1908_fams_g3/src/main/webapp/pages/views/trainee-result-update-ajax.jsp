@@ -21,6 +21,8 @@
                     <!-- Place Modal Here-->
                     <!-- First modal to view Attendence Status-->
                     <div id="modal-attendace-status">
+                    	<!-- <div id="modalViewAttendence" class="modal fade" role="dialog">
+                    	</div> -->
                         <!-- Modal content -->
                     </div>
                     
@@ -83,12 +85,19 @@
                                 </tr>
                             </thead>
                             <tbody class="collapse show" id="tbody-attendance-status">
-                                <tr>
+                                <tr class="att-status-tr">
                                     <th></th>
                                     <th>Absent Times</th>
                                     <th>Late & Early Leave</th>
                                     <th>No permisstions Rate</th>
                                     <th>Disciplinary Point</th>
+                                </tr>
+                                <tr id="att-status-tr-final">
+                                    <th>Final</th>
+                                    <td id="fn-absent-time">0</td>
+                                    <td id="fn-lastOrEarly">0</td>
+                                    <td id="fn-no-permission">0</td>
+                                    <td id="fn-dis-point">0</td>
                                 </tr>
                                 <!-- Here to click to display modal-->
                                 
@@ -387,3 +396,4 @@
     
 
     <script src='<c:url value="/resources/js/trainee-result.js"></c:url>'></script>
+    <script src='<c:url value="/resources/js/trainee-result-math.js"></c:url>'></script>

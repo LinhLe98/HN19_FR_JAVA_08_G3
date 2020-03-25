@@ -72,10 +72,10 @@ public class ViewController {
 		return "trainee-result-view-ajax";
 	}
 
-	@RequestMapping("/trainee-management/modal-attendace-status")
-	public String getModalAttendaceStatus() {
-		return "modal-attendace-status";
-	}
+//	@RequestMapping("/trainee-management/modal-attendace-status")
+//	public String getModalAttendaceStatus() {
+//		return "modal-attendace-status";
+//	}
 
 
 }

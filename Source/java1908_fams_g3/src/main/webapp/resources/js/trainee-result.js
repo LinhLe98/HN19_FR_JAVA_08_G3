@@ -22,13 +22,24 @@ $(document).ready(function () {
 //        });
 //    });
 
-    //get modal attendace status
-    $.get({
-        url: "/trainee-management/modal-attendace-status",
-        success: function (data) {
-            $("#modal-attendace-status").html(data);
-        }
-    });
+//    //get modal attendace status
+//    $(document).on('click','.attendace-row-n',function(e){
+//        var code = $(this).find('.milestoneName').text();
+//        var date = $(this).find('.milestoneName').attr('txt');
+//        
+//        $.get({
+//        	url: "/trainee-management/modal-attendace-status",
+//        	data:{
+//        		dateCode:code,
+//        		date	:date
+//        	},
+//        	success: function (data) {
+//        		$("#modal-attendace-status").html(data);
+//        		$("#modalViewAttendence").modal("show");
+//        	}
+//        });
+//        
+//    });
     var listMinestone = [];
     var listTopic = [];
     
@@ -172,9 +183,11 @@ $(document).ready(function () {
     // $("#icon-add-more-milestone").click(function () {
     $(document).on('click', "#icon-add-more-milestone", function (e) {
         var now = new Date();
+        var day = now.getDate()
         var month = now.getMonth() + 1;
         var year = now.getFullYear().toString().substring(2);
         var dateCode = `Thg${month}-${year}`;
+        var today = now.getFullYear()+'-'+month+'-'+day;
         $(this).closest(".milestones").children(".milestoneName").text(dateCode);
         var content = `<tr class="milestones">
                         <td class="icon-delete-milestone"><a href="#"><i
@@ -189,11 +202,11 @@ $(document).ready(function () {
                         </td>
                         <td colspan="2" class="td-input">
                             <!-- <input class="w-75 datePicker" type="date" name="startDate" id="startDate"> -->
-                            <input type="date" pattern="dd-mm-yyyy" class="datepicker-startDate-milestone startDate" value='${now}' />
+                            <input type="date" class="startDate" value='${today}' />
                         </td>
                         <td colspan="2" class="td-input">
                             <!-- <input class="w-75 datePicker" type="date" name="endDate" id="endDate"> -->
-                            <input type="date" pattern="dd-mm-yyyy" class="datepicker-endDate-milestone endDate" value='${now}' />
+                            <input type="date" class="endDate" value='${today}' />
                         </td>
                     </tr>
             <!-- Topic header -->
@@ -232,13 +245,14 @@ $(document).ready(function () {
 
         var milestoneName = $(".milestones:last .milestoneName").text();
         // add more row on attendace status table 
-        $("#tbody-attendance-status").append(`
-            <tr data-toggle="modal" class="attendace-row-n" data-target="#modalViewAttendence">
-                <th class="th milestoneName">${milestoneName}</th>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+//        $("#tbody-attendance-status").append(`
+         $("#tbody-attendance-status .att-status-tr:last").after(`
+            <tr class="attendace-row-n att-status-tr">
+                <th class="th milestoneName " txt='${today}'>${milestoneName}</th>
+                <td class="absentTime">0</td>
+                <td class="lateOrEarly">0</td>
+                <td class="noPermissionRate">0</td>
+                <td class="disPoint">0</td>
             </tr>
         `);
 
@@ -299,14 +313,27 @@ $(document).ready(function () {
         var year = arr[0].substring(2);
         var dateCode = `Thg${month}-${year}`;
         $(this).closest(".milestones").children(".milestoneName").text(dateCode);
+        /*$(this).closest(".milestones").children(".milestoneName").prop('txt',startDate);*/
         listMinestone[index].startDate = startDate;
         listMinestone[index].name = dateCode;
         listMinestone[index].salaryPaid = "Yes";
 
         $(`#tbody-attendance-status tr.attendace-row-n:nth-child(${index + 2}) th`).text(dateCode);
+        $(`#tbody-attendance-status tr.attendace-row-n:nth-child(${index + 2}) th`).attr('txt',startDate);
         $(`#tbody-toppic-mark #content td:nth-child(${index + 1})`).find(".dateCode").text(dateCode);
 
         $(`#tbody-gpa tr:nth-child(${index + 2})`).find(".dateCode-gpa").text(dateCode);
+        
+        var n = listMinestone.length;
+        var selectList = document.createElement('select');
+
+        for (var i = 0; i < n; i++) {
+            var option = document.createElement('option');
+            option.value = i;
+            option.text = listMinestone[i].name;
+            selectList.appendChild(option);
+        }
+        $(".selectMilestone:last").html(selectList);
     });
 
     //event onchange end date
